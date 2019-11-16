@@ -8,7 +8,7 @@ set smartcase
 
 " set line numbers
 set number
-set relativenumber
+" set relativenumber
 
 " cmdline history
 set history=1000
@@ -68,7 +68,7 @@ Plug 'tpope/vim-surround'
 " Latex
 Plug 'lervag/vimtex'
 " Completion 
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 " Fuzzy search
 Plug 'ctrlpvim/ctrlp.vim'
 " Display changes in git:
@@ -91,10 +91,10 @@ endif
 
 set omnifunc=syntaxcomplete#Complete
 
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#var('omni', 'input_patterns', {
-  \ 'tex': g:vimtex#re#deoplete
-  \})
+" let g:deoplete#enable_at_startup = 1
+" call deoplete#custom#var('omni', 'input_patterns', {
+"   \ 'tex': g:vimtex#re#deoplete
+"   \})
 " Tab based completion
 inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
 
@@ -108,7 +108,7 @@ set background=dark
 set clipboard^=unnamed,unnamedplus
 
 " enable mouse support
-set mouse=a
+" set mouse=a
 
 " f to toggle tree view
 nnoremap <Leader>f :NERDTreeToggle<Enter>
@@ -140,6 +140,7 @@ set updatetime=250
 " NerdCommenter customizations
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
+let NERDSpaceDelims = 1
 
 " Cycle through buffers with tab
 :nnoremap <Tab> :bnext<CR>

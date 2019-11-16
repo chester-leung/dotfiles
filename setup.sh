@@ -69,5 +69,4 @@ cp git/gitconfig ~/.gitconfig
 cat bash/bashrc >> ~/.bashrc
 cat bash/bash_profile >> ~/.bash_profile
 cat bash/inputrc >> ~/.inputrc
-cat bash/git-completion.bash >> ~/.git-completion.bash
-
+cat bash/git-completion.bash > ~/.git-completion.bash
