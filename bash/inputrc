@@ -1,0 +1,5 @@
+# case-insensitive bash completion
+set completion-ignore-case on
+
+# show all autocomplete options
+set show-all-if-ambiguous on

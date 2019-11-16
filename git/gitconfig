@@ -1,0 +1,22 @@
+[user]
+  name  = Chester Leung 
+  email = chester.leung@berkeley.edu 
+[github]
+  user = chester-leung 
+[hub]
+  protocol = https
+[core]
+  editor = vim -f
+[alias]
+  a       = add -u
+  aa      = add --all :/
+  ap      = add -u -p
+  b       = branch
+  c       = commit -v
+  co      = checkout
+  d       = diff
+  ds      = diff --staged
+  dw      = diff --color-words
+  l       = log --pretty='format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar' --date=short
+  s       = status 
+  sync    = !git checkout master && git fetch upstream && git merge upstream/master
