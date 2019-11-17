@@ -70,3 +70,4 @@ cat bash/bashrc >> ~/.bashrc
 cat bash/bash_profile >> ~/.bash_profile
 cat bash/inputrc >> ~/.inputrc
 cat bash/git-completion.bash > ~/.git-completion.bash
+cat bash/connect_ec2.sh > ~/.connect_ec2.sh

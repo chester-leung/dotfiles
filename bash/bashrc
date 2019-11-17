@@ -4,6 +4,7 @@ alias vi="nvim"
 
 alias ll="ls -lh"
 alias la="ls -alh"
+alias ec2="~/.connect_ec2.sh"
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
