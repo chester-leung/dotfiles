@@ -55,6 +55,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 " colorscheme
 Plug 'iCyMind/NeoSolarized'
+" colorscheme
+" Plug 'NLKNguyen/papercolor-theme'
+" colorscheme
+" Plug 'morhetz/gruvbox'
 " commenting
 Plug 'scrooloose/nerdcommenter'
 " tmux integration
@@ -100,7 +104,7 @@ inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " solarized theme
 set termguicolors
-colorscheme NeoSolarized
+colorscheme NeoSolarized 
 set background=dark
 
 
