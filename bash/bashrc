@@ -12,7 +12,6 @@ parse_git_branch() {
 export PS1="\[\033[33m\]\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 # For Docker
 # export PS1="\[\e[00;35m\]\u\[\e[0m\]@\[\e[00;36m\]\h\[\e[0m\]:\[\e[00;33m\]\w\[\e[0m\]\033[32m\]\$(parse_git_branch)\[\033[00m\]$ "
-export HOST_IP=$(ifconfig en0 | awk '/ *inet /{print $2}')
 
 source ~/.git-completion.bash
 export HOMEBREW_NO_AUTO_UPDATE=1
