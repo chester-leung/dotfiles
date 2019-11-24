@@ -122,6 +122,9 @@ map vv <C-W>v
 map ss <C-W>s
 map Q  <C-W>q
 
+" Switch Vim panes with <Leader>w
+nnoremap <Leader>w <C-w>w
+
 " Open splits on the right and below
 set splitbelow
 set splitright
