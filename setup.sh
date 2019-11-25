@@ -71,3 +71,13 @@ cat bash/bash_profile >> ~/.bash_profile
 cat bash/inputrc >> ~/.inputrc
 cat bash/git-completion.bash > ~/.git-completion.bash
 cat bash/connect_ec2.sh > ~/.connect_ec2.sh
+
+ 
+# ---------------------------------------------------------------------
+# Docker 
+# ---------------------------------------------------------------------
+echo "{" >> config.json
+cat docker.config >> config.json
+tail -n +2 ~/.docker/config.json >> config.json
+cp config.json ~/.docker/config.json
+rm config.json
