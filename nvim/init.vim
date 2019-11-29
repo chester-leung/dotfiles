@@ -154,6 +154,7 @@ let NERDSpaceDelims = 1
 " Cycle through buffers with tab
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
+:nnoremap <leader>d :bd<CR>
 
 " Close buffer without closing split using Bd
 command Bd bp|bd #
