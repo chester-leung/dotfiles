@@ -124,6 +124,9 @@ set clipboard^=unnamed,unnamedplus
 " f to toggle tree view
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 
+" Switch Vim panes with <Leader>w	
+nnoremap <Leader>w <C-w>w
+
 " Open new splits easily
 map vv <C-W>v
 map ss <C-W>s
