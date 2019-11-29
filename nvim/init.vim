@@ -24,6 +24,9 @@ set title
 
 set cursorline
 
+" set statusline+=\ %{FugitiveStatusline()}
+" set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
+
 " intelligent indentation
 set autoindent
 set smartindent
@@ -77,6 +80,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'ctrlpvim/ctrlp.vim'
 " Display changes in git:
 Plug 'airblade/vim-gitgutter'
+" Git wrapper
+Plug 'tpope/vim-fugitive'
 
 " plugins end
 call plug#end()
@@ -121,9 +126,6 @@ nnoremap <Leader>f :NERDTreeToggle<Enter>
 map vv <C-W>v
 map ss <C-W>s
 map Q  <C-W>q
-
-" Switch Vim panes with <Leader>w
-nnoremap <Leader>w <C-w>w
 
 " Open splits on the right and below
 set splitbelow
