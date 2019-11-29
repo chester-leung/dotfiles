@@ -72,7 +72,7 @@ Plug 'tpope/vim-surround'
 " Latex
 Plug 'lervag/vimtex'
 " Completion 
-" Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 " Fuzzy search
 Plug 'ctrlpvim/ctrlp.vim'
 " Display changes in git:
@@ -95,10 +95,10 @@ endif
 
 set omnifunc=syntaxcomplete#Complete
 
-" let g:deoplete#enable_at_startup = 1
-" call deoplete#custom#var('omni', 'input_patterns', {
-"   \ 'tex': g:vimtex#re#deoplete
-"   \})
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#var('omni', 'input_patterns', {
+  \ 'tex': g:vimtex#re#deoplete
+  \})
 " Tab based completion
 inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
 

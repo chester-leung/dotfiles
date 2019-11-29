@@ -26,6 +26,9 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 
 #cp vim/vimrc ~/.vimrc
 
+# Install Python3 interface for deoplete
+pip3 install --user pynvim
+
 mkdir -p ~/.config/nvim
 cp nvim/init.vim ~/.config/nvim/init.vim
 
