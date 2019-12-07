@@ -14,6 +14,7 @@ else
     sudo apt-get update
     sudo apt-get install ripgrep
     sudo apt-get install neovim
+    sudo apt-get install python3-pip
 fi
 
 # download plugin manager for vim
@@ -79,8 +80,12 @@ cat bash/connect_ec2.sh > ~/.connect_ec2.sh
 # ---------------------------------------------------------------------
 # Docker 
 # ---------------------------------------------------------------------
-echo "{" >> config.json
-cat docker.config >> config.json
-tail -n +2 ~/.docker/config.json >> config.json
-cp config.json ~/.docker/config.json
-rm config.json
+if [ -f "~/.docker/config.json" ]; then
+    echo "{" >> config.json
+    cat docker.config >> config.json
+    tail -n +2 ~/.docker/config.json >> config.json
+    cp config.json ~/.docker/config.json
+    rm config.json
+else
+    echo -e "{\n\t"detachKeys": "ctrl-e,e"\n}"
+fi
