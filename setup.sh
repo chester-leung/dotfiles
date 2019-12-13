@@ -87,5 +87,6 @@ if [ -f "~/.docker/config.json" ]; then
     cp config.json ~/.docker/config.json
     rm config.json
 else
-    echo -e "{\n\t"detachKeys": "ctrl-e,e"\n}"
+    mkdir ~/.docker
+    echo -e "{\n\t"detachKeys": "ctrl-e,e"\n}" > ~/.docker/config.json
 fi
