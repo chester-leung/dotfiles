@@ -83,7 +83,7 @@ Plug 'airblade/vim-gitgutter'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 " Status line
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 
 " plugins end
 call plug#end()
@@ -184,14 +184,14 @@ let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 au FileType tex let b:AutoPairs = AutoPairsDefine({'$' : '$'})
 
 " Configure lightline for statusline
-set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+" set noshowmode
+" let g:lightline = {
+      " \ 'colorscheme': 'wombat',
+      " \ 'active': {
+      " \   'left': [ [ 'mode', 'paste' ],
+      " \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      " \ },
+      " \ 'component_function': {
+      " \   'gitbranch': 'fugitive#head'
+      " \ },
+      " \ }
