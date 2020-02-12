@@ -142,6 +142,10 @@ autocmd VimResized * wincmd =
 " Keep 5 lines below and above the cursor
 set scrolloff=5 
 
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
+
 
 " Navigate in insert mode to start/end of line
 inoremap <C-a> <C-o>0
