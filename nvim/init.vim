@@ -24,6 +24,9 @@ set title
 
 set cursorline
 
+" Add full path to status line
+set statusline+=%F
+
 " set statusline+=\ %{FugitiveStatusline()}
 " set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 
@@ -163,7 +166,12 @@ let NERDSpaceDelims = 1
 " Cycle through buffers with tab
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
+
+" Close buffer and close window
 :nnoremap <leader>d :bd<CR>
+
+" Close buffer without closing window
+:nnoremap <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Close buffer without closing split using Bd
 command Bd bp|bd #
