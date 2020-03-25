@@ -13,6 +13,7 @@ else
     sudo add-apt-repository ppa:neovim-ppa/stable
     sudo apt-get update
     sudo apt-get install ripgrep
+    sudo snap install ripgrep
     sudo apt-get install neovim
     sudo apt-get install python3-pip
 fi

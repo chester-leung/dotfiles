@@ -154,6 +154,9 @@ nnoremap <Leader>O O<Esc>
 inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
 
+" Next sentence / Previous Sentence
+:nnoremap m )
+:nnoremap M (
 
 " Set low update time for gitgutter
 set updatetime=250
