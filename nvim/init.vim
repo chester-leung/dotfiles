@@ -158,6 +158,10 @@ inoremap <C-e> <C-o>$
 :nnoremap m )
 :nnoremap M (
 
+" Delete to end of sentence / beginning of sentence
+:nnoremap dm d)
+:nnoremap dM d(
+
 " Set low update time for gitgutter
 set updatetime=250
 
