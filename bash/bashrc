@@ -5,6 +5,7 @@ alias vi="nvim"
 alias ll="ls -lh"
 alias la="ls -alh"
 alias ec2="~/.connect_ec2.sh"
+alias spi="sudo python3 setup.py install"
 
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -15,4 +16,4 @@ export PS1="\[\033[35m\]\u@\h:\[\033[33m\]\w\[\033[32m\]\$(parse_git_branch)\[\0
 
 source ~/.git-completion.bash
 export HOMEBREW_NO_AUTO_UPDATE=1
-
+export PATH=$PATH:/snap/bin
