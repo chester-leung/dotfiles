@@ -121,6 +121,12 @@ set background=dark
 " use System Clipboard:
 set clipboard^=unnamed,unnamedplus
 
+" Delete single character without updating default register
+noremap x "_x
+" Paste in visual mode without updating default register (don't copy the text
+" you pasted over)
+vnoremap p "_dP
+
 " enable mouse support
 " set mouse=a
 
@@ -154,13 +160,13 @@ nnoremap <Leader>O O<Esc>
 inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
 
-" Next sentence / Previous Sentence
-:nnoremap m )
-:nnoremap M (
-
-" Delete to end of sentence / beginning of sentence
-:nnoremap dm d)
-:nnoremap dM d(
+" " Next sentence / Previous Sentence
+" :nnoremap m )
+" :nnoremap M (
+" 
+" " Delete to end of sentence / beginning of sentence
+" :nnoremap dm d)
+" :nnoremap dM d(
 
 " Set low update time for gitgutter
 set updatetime=250
