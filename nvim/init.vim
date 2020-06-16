@@ -40,8 +40,8 @@ set shiftwidth=4
 " on pressing tab, insert 4 spaces
 set expandtab
 " Auto indent pasted text
-nnoremap p ]p
-nnoremap P ]P
+:nnoremap p ]p`]
+:nnoremap P ]P`]
 
 " map Leader to comma
 let mapleader = ","
@@ -218,7 +218,7 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head'
