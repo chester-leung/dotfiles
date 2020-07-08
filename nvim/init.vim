@@ -127,6 +127,10 @@ nnoremap x "_x
 " you pasted over)
 vnoremap p "_dP
 
+" Delete in whatever without copying deleted text
+nnoremap ci "_ci
+nnoremap di "_di
+
 " Stay in visual mode after indenting
 vnoremap < <gv
 vnoremap > >gv
