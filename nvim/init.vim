@@ -123,6 +123,11 @@ set clipboard^=unnamed,unnamedplus
 
 " Delete single character without updating default register
 nnoremap x "_x
+
+" Delete without copying deleted text
+nnoremap d "_d
+vnoremap d "_d
+
 " Paste in visual mode without updating default register (don't copy the text
 " you pasted over)
 vnoremap p "_dP
