@@ -132,6 +132,10 @@ vnoremap d "_d
 " you pasted over)
 vnoremap p "_dP
 
+" Change without copying deleted text
+nnoremap c "_c
+vnoremap c "_c
+
 " Delete in whatever without copying deleted text
 nnoremap ci "_ci
 nnoremap di "_di
