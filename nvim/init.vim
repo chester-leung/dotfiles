@@ -106,6 +106,7 @@ endif
 set omnifunc=syntaxcomplete#Complete
 
 let g:deoplete#enable_at_startup = 1
+let g:tex_flavor = 'latex'
 call deoplete#custom#var('omni', 'input_patterns', {
   \ 'tex': g:vimtex#re#deoplete
   \})
