@@ -78,7 +78,7 @@ Plug 'tpope/vim-surround'
 " Latex
 Plug 'lervag/vimtex'
 " Completion 
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Fuzzy search
 Plug 'ctrlpvim/ctrlp.vim'
 " Display changes in git:
