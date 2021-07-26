@@ -16,6 +16,10 @@ else
     sudo snap install ripgrep --classic
     sudo apt-get install neovim
     sudo apt-get install python3-pip
+    sudo apt-get install curl
+
+    curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
+    sudo dpkg -i ripgrep_12.1.1_amd64.deb
 fi
 
 # download plugin manager for vim
