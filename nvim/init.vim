@@ -153,6 +153,10 @@ nnoremap <Leader>f :NERDTreeToggle<Enter>
 
 " Switch Vim panes with <Leader>w	
 nnoremap <Leader>w <C-w>w
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
 
 " Open new splits easily
 map vv <C-W>v
