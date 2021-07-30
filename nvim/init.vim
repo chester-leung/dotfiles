@@ -158,6 +158,9 @@ nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 
+" Disable gitgutter mappings
+let g:gitgutter_map_keys = 0
+
 " Open new splits easily
 map vv <C-W>v
 map ss <C-W>s
