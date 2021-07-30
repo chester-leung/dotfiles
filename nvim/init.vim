@@ -156,7 +156,7 @@ nnoremap <Leader>w <C-w>w
 nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
-nnoremap <leader>h <C-W><C-H>
+nnoremap <Leader>h <C-W><C-H>
 
 " Open new splits easily
 map vv <C-W>v
