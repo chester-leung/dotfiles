@@ -9,14 +9,14 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install ripgrep
     brew install neovim
 else
-    sudo apt-get install software-properties-common
+    sudo apt-get -y install software-properties-common
     sudo add-apt-repository ppa:neovim-ppa/stable
     sudo apt-get update
-    sudo apt-get install ripgrep
+    sudo apt-get -y install ripgrep
     sudo snap install ripgrep --classic
-    sudo apt-get install neovim
-    sudo apt-get install python3-pip
-    sudo apt-get install curl
+    sudo apt-get -y install neovim
+    sudo apt-get -y install python3-pip
+    sudo apt-get -y install curl
 
     curl -LO https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb
     sudo dpkg -i ripgrep_12.1.1_amd64.deb
@@ -55,8 +55,8 @@ if [ "$(uname)" == "Darwin" ]; then
     brew install reattach-to-user-namespace
     cp tmux/tmux-macos.conf ~/.tmux.conf
 else
-    sudo apt-get install tmux
-    sudo apt-get install xsel
+    sudo apt-get -y install tmux
+    sudo apt-get -y install xsel
     cp tmux/tmux-linux.conf ~/.tmux.conf
 fi
 
