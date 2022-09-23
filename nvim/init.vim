@@ -271,6 +271,8 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 " Start off without Git blame enabled
+let g:gitblame_message_template = '<summary> • <date> • <author> • <sha>'
 let g:gitblame_enabled = 0
 :nnoremap <leader>b :GitBlameToggle<CR>
 :nnoremap <leader>B :GitBlameOpenCommitURL<CR>
+let g:gitblame_ignored_filetypes = ['nerdtree']
