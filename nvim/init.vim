@@ -118,7 +118,7 @@ inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " solarized theme
 set termguicolors
-colorscheme neosolarized
+colorscheme NeoSolarized
 set background=dark
 
 
