@@ -46,7 +46,6 @@ set expandtab
 " map Leader to comma
 let mapleader = ","
 
-
 " Incremental search
 set incsearch
 " Hightlight all on search
@@ -64,7 +63,7 @@ Plug 'iCyMind/NeoSolarized'
 " colorscheme
 " Plug 'NLKNguyen/papercolor-theme'
 " colorscheme
-" Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox-material'
 " commenting
 Plug 'scrooloose/nerdcommenter'
 " tmux integration
@@ -78,17 +77,19 @@ Plug 'tpope/vim-surround'
 " Latex
 Plug 'lervag/vimtex'
 " Completion 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim'
 " Fuzzy search
 Plug 'ctrlpvim/ctrlp.vim'
 " Display changes in git:
 Plug 'airblade/vim-gitgutter'
 " Git wrapper
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Status line
 Plug 'itchyny/lightline.vim'
 " Clipboard history
 Plug 'maxbrunsfeld/vim-yankstack'
+" Git blame
+Plug 'f-person/git-blame.nvim'
 
 " plugins end
 call plug#end()
@@ -117,7 +118,7 @@ inoremap <expr><Tab>  pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " solarized theme
 set termguicolors
-colorscheme NeoSolarized 
+colorscheme neosolarized
 set background=dark
 
 
@@ -153,15 +154,15 @@ vnoremap > >gv
 " f to toggle tree view
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 
+" Disable gitgutter mappings
+let g:gitgutter_map_keys = 0
+
 " Switch Vim panes with <Leader>w	
 nnoremap <Leader>w <C-w>w
 nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
-
-" Disable gitgutter mappings
-let g:gitgutter_map_keys = 0
 
 " Open new splits easily
 map vv <C-W>v
@@ -226,6 +227,8 @@ let g:ctrlp_use_caching = 0
 " Enable spell checking for text files
 autocmd FileType text,markdown,html,tex set spell
 
+" Disable gitgutter mappings
+let g:gitgutter_map_keys = 0
 
 " Faster tex files (reduce syntax highlighting)
 let g:tex_fast="mMpr"
@@ -264,6 +267,10 @@ func! Multiple_cursors_after()
   endif
 endfunc
 
-" Clipboard cycling
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" Start off without Git blame enabled
+let g:gitblame_enabled = 0
+:nnoremap <leader>b :GitBlameToggle<CR>
+:nnoremap <leader>B :GitBlameOpenCommitURL<CR>
