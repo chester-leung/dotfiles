@@ -1,0 +1,63 @@
+{
+    "editor.cursorBlinking": "solid",
+    "workbench.startupEditor": "none",
+    "editor.lineNumbers": "relative",
+    "vscode-neovim.highlightGroups.highlights": {
+
+        "Directory": "vim",
+        "IncSearch": {
+            "backgroundColor": "theme.editor.findMatchBackground",
+            "borderColor": "theme.editor.findMatchBorder"
+        },
+        "Search": {
+            "backgroundColor": "theme.editor.findMatchHighlightBackground",
+            "borderColor": "theme.editor.findMatchHighlightBorder"
+        },
+        "Visual": {
+            "backgroundColor": "theme.editor.selectionBackground"
+        },
+        "Conceal": "vim",
+        "Substitute": "vim"
+    },
+    "workbench.colorTheme": "Solarized Dark+",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#135564",
+        "editor.selectionHighlightBackground": "#135564"
+    },
+    "editor.minimap.enabled": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "window.zoomLevel": 1,
+    "explorer.confirmDragAndDrop": false,
+    "editor.inlineSuggest.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false,
+        "yaml": true,
+        "nix": true
+    },
+    "terminal.integrated.scrollback": 100000,
+    "editor.rulers": [
+        79
+    ],
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "cmake.configureOnOpen": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "workbench.editor.empty.hint": "hidden",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    
+}
