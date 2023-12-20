@@ -131,6 +131,8 @@ nnoremap x "_x
 " Delete without copying deleted text
 nnoremap d "_d
 vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
 
 " Paste in visual mode without updating default register (don't copy the text
 " you pasted over)
@@ -139,6 +141,8 @@ vnoremap p "_dP
 " Change without copying deleted text
 nnoremap c "_c
 vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
 
 " Delete in whatever without copying deleted text
 nnoremap ci "_ci
