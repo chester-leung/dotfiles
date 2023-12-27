@@ -11,19 +11,28 @@
     command: ./macos/setup-homebrew.sh
     description: Installing Homebrew and Essential Packages
     stdout: true
+    stderr: true
   -
     description: Downloading vim-plug to ~/.vim/autoload/plug.vim
     command: curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     stdout: true
+    stderr: true
   -
     description: Downloading plugin manager for nvim
     command: curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     stdout: true
+    stderr: true
 
 - link:
     # ~/.dotfiles: ''
     
-    ~/.gitconfig: git/gitconfig
+    ~/.gitconfig: 
+      path: git/gitconfig
+      force: true
+        
+    ~/.git-completion.bash:
+      path: bash/git-completion.bash
+      force: true
 
     # ~/.vimrc: vim/vimrc
     ~/.config/nvim:
