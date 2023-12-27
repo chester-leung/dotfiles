@@ -2,6 +2,12 @@
 #
 # Install homebrew and essential packages
 
+# Only run on macOS
+if [ "$(uname)" != "Darwin" ]; then
+  echo "Not macOS. Skipping Homebrew setup."
+  exit 0
+fi
+
 if ! type brew > /dev/null 2>&1; then
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
