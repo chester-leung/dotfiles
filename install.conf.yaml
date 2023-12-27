@@ -38,6 +38,10 @@
     # ~/.asdfrc: zsh/asdfrc
     # ~/.hushlogin: zsh/hushlogin
 
+    ~/.aliases:
+      path: .aliases
+      force: true
+
     ~/.bashrc:
       path: bash/bashrc
       force: true
