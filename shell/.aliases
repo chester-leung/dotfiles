@@ -37,3 +37,23 @@ alias cp='cp -i'
 
 # move file interactive
 alias mv='mv -i'
+
+# kubectl
+alias k="kubectl"
+alias tf="terraform"
+
+# Azure subs
+alias subprod="az account set --subscription e238329d-b62b-4551-8395-046f6fa66b28"
+alias subtcs="az account set --subscription a5980719-95dc-405d-a853-a29e6946f1a6" 
+
+boop () {
+    local last="$?"
+    if [[ "$last" == '0' ]]; then
+        # Success sound and notification
+        afplay /System/Library/Sounds/Glass.aiff &
+    else
+        # Failure sound and notification
+        afplay /System/Library/Sounds/Basso.aiff &
+    fi
+    $(exit "$last")
+}
