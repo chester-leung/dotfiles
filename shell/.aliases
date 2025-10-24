@@ -1,25 +1,6 @@
 # Use neovim
 alias vim="nvim"
 
-# Linux specific aliases, work on both MacOS and Linux.
-pbcopy() {
-	stdin=$(</dev/stdin);
-	pbcopy="$(which pbcopy)";
-	if [[ -n "$pbcopy" ]]; then
-		echo "$stdin" | "$pbcopy"
-	else
-		echo "$stdin" | xclip -selection clipboard
-	fi
-}
-pbpaste() {
-	pbpaste="$(which pbpaste)";
-	if [[ -n "$pbpaste" ]]; then
-		"$pbpaste"
-	else
-		xclip -selection clipboard
-	fi
-}
-
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
 alias ...="cd ../.."
@@ -44,16 +25,21 @@ alias tf="terraform"
 
 # Azure subs
 alias subprod="az account set --subscription e238329d-b62b-4551-8395-046f6fa66b28"
-alias subtcs="az account set --subscription a5980719-95dc-405d-a853-a29e6946f1a6" 
+alias subtcs="az account set --subscription a5980719-95dc-405d-a853-a29e6946f1a6"
 
 boop () {
     local last="$?"
     if [[ "$last" == '0' ]]; then
-        # Success sound and notification
-        afplay /System/Library/Sounds/Glass.aiff &
+        # Success sound
+        (afplay /System/Library/Sounds/Glass.aiff &>/dev/null &)
     else
-        # Failure sound and notification
-        afplay /System/Library/Sounds/Basso.aiff &
+        # Failure sound
+        (afplay /System/Library/Sounds/Basso.aiff &>/dev/null &)
     fi
     $(exit "$last")
+}
+
+mkcd () {
+  \mkdir -p "$1"
+  cd "$1"
 }

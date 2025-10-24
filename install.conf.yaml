@@ -91,10 +91,9 @@
     #   path: phoenix/dist/phoenix.js
     #   force: true
 
-    # ~/bin:
-    #   glob: true
-    #   path: scripts/*
-    #   relink: true
+    ~/.bin:
+      path: bin
+      force: true
 
     # VS Code Linux
     # ~/.config/Code/User:
