@@ -1,0 +1,4 @@
+#!/bin/bash
+# Open the current repository in the browser
+
+gh repo view --web
