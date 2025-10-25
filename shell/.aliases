@@ -27,6 +27,7 @@ alias tf="terraform"
 alias subprod="az account set --subscription e238329d-b62b-4551-8395-046f6fa66b28"
 alias subtcs="az account set --subscription a5980719-95dc-405d-a853-a29e6946f1a6"
 
+# Play a sound based on the last command exit status
 boop () {
     local last="$?"
     if [[ "$last" == '0' ]]; then
@@ -39,7 +40,19 @@ boop () {
     $(exit "$last")
 }
 
+# Create a directory and cd into it
 mkcd () {
   \mkdir -p "$1"
   cd "$1"
+}
+
+# Create a temporary directory and cd into it
+tempe () {
+  cd "$(mktemp -d)"
+  chmod -R 0700 .
+  if [[ $# -eq 1 ]]; then
+    \mkdir -p "$1"
+    cd "$1"
+    chmod -R 0700 .
+  fi
 }
