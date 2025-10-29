@@ -13,3 +13,6 @@ To install:
     $(brew --prefix)/opt/fzf/install
     ```
 - neovim
+
+- git-delta
+
