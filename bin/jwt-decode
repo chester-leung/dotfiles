@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+set -u
+
+if [ -p /dev/stdin ]; then
+    jq -R 'split(".") | .[0:2] | map(gsub("-"; "+") | gsub("_"; "/") | @base64d) | map(fromjson)'
+  else
+    jq -R 'split(".") | .[0:2] | map(gsub("-"; "+") | gsub("_"; "/") | @base64d) | map(fromjson)' <<< "$1"
+fi
