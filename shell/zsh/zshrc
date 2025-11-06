@@ -70,7 +70,7 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting vi-mode direnv)
+plugins=(git zsh-autosuggestions zsh-vi-mode direnv zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,22 +110,41 @@ zstyle :prompt:pure:git:branch color green
 autoload -U promptinit; promptinit
 prompt pure
 
+# function zle-keymap-select zle-line-init
+# {
+#     # change cursor shape in iTerm2
+#     case $KEYMAP in
+#         vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
+#         viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+#     esac
+# 
+#     zle reset-prompt
+#     zle -R
+# }
+# 
+# function zle-line-finish
+# {
+#     print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+# }
 function zle-keymap-select zle-line-init
 {
-    # change cursor shape in iTerm2
+    # change cursor shape (works in most modern terminals)
     case $KEYMAP in
-        vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
-        viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+        vicmd)      print -n -- "\e[2 q";;  # block cursor
+        viins|main) print -n -- "\e[6 q";;  # line cursor
     esac
-
     zle reset-prompt
     zle -R
 }
 
 function zle-line-finish
 {
-    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+    print -n -- "\e[2 q"  # block cursor
 }
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
 
 zle -N zle-line-init
 zle -N zle-line-finish
@@ -154,4 +173,17 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+_fzf_vi_bindings() {
+  bindkey -M viins "^R" fzf-history-widget
+  bindkey -M vicmd "^R" fzf-history-widget
+  bindkey -M viins "^T" fzf-file-widget
+  bindkey -M vicmd "^T" fzf-file-widget
+  bindkey -M viins "^[c" fzf-cd-widget
+  bindkey -M vicmd "^[c" fzf-cd-widget
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _fzf_vi_bindings   # runs before first prompt
+
