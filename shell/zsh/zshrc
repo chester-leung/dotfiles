@@ -70,7 +70,7 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-vi-mode direnv zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions direnv zsh-syntax-highlighting zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -142,9 +142,18 @@ function zle-line-finish
     print -n -- "\e[2 q"  # block cursor
 }
 
-zle -N zle-line-init
-zle -N zle-line-finish
-zle -N zle-keymap-select
+# On a new line, always start in insert mode
+# Hook into zsh-vi-mode to add custom binding after it initializes
+function zvm_after_init() {
+    # Bind Enter in normal mode to accept line
+    bindkey -M vicmd '^M' accept-line
+    
+    # Always start in insert mode on new prompt
+    zle-line-init() {
+        zle -K viins
+    }
+    zle -N zle-line-init
+}
 
 zle -N zle-line-init
 zle -N zle-line-finish
@@ -186,4 +195,3 @@ _fzf_vi_bindings() {
 }
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _fzf_vi_bindings   # runs before first prompt
-
